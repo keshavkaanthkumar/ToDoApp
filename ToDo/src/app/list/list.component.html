@@ -1,0 +1,21 @@
+<div class="item" *ngFor="let task of tasks">
+
+    <!-- <mat-action-list>
+        <button mat-list-item (click)="openModal('custom-modal-2',task)">{{task.taskname}}</button>
+    </mat-action-list> -->
+    <ul>
+        <div *ngIf="task.completed==false">
+            <li (click)="openModal('custom-modal-2',task)">{{task.taskname}}</li>
+        </div>
+        <div *ngIf="task.completed==true">
+            <li class="strike" (click)="openModal('custom-modal-2',task)">{{task.taskname}}</li>
+        </div>
+
+    </ul>
+
+
+
+</div>
+
+<jw-modal id="custom-modal-2">
+</jw-modal>

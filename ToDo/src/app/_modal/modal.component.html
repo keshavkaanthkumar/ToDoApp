@@ -1,0 +1,18 @@
+﻿<div class="jw-modal">
+    <div class="jw-modal-body">
+        <!-- {{clickedTask.taskname}} -->
+        <ng-content></ng-content>
+        <div *ngIf="clickedTask==null">
+            <app-add-task>
+
+            </app-add-task>
+        </div>
+        <div *ngIf="clickedTask!=null">
+            <app-update-task [Task]='clickedTask'>
+
+            </app-update-task>
+        </div>
+
+    </div>
+</div>
+<div class="jw-modal-background"></div>

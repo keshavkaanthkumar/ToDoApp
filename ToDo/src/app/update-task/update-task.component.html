@@ -1,0 +1,52 @@
+<!-- <p>
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="Task name" [(ngModel)]="task.taskname" required>
+    </mat-form-field>
+</p>
+<p>
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="Description" [(ngModel)]="task.description" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Task completed?</mat-label>
+        <select matNativeControl required>
+              <option [(ngModel)]="task.completed" [value]=true ngDefaultControl>Yes</option>
+              <option [(ngModel)]="task.completed" [value]=false>No</option>
+            </select>
+    </mat-form-field>
+</p>
+<button mat-raised-button color="primary" (click)="update()">Update</button> -->
+<h1>Update / Delete Task</h1>
+<form>
+
+    <div>
+        <label>
+                    Task Name:
+                  </label>
+        <input type="text" [(ngModel)]="Task.taskname" [ngModelOptions]="{standalone: true}" required>
+    </div>
+
+    <div>
+        <label>
+                    Description:
+                  </label>
+        <input id="description" type="text" [(ngModel)]="Task.description" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div>
+        <label>
+                        Due date:
+                      </label>
+        <input type="datetime-local" value="Task.due_date" [(ngModel)]="Task.due_date" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div>
+        <label>
+                        Task Completed:
+                      </label>
+        <select [ngModelOptions]="{standalone: true}" [(ngModel)]="Task.completed">
+                            <option   [ngValue]=true >Yes</option>
+                            <option  [ngValue]=false>No</option>
+                          </select>
+    </div>
+
+    <button class="button " (click)="update()">Update Task</button>
+    <button class="button " (click)="delete()">Delete Task</button>

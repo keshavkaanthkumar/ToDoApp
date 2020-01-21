@@ -26,6 +26,8 @@ public class Task implements Serializable {
 
     @NotBlank
     private String taskname;
+    @NotBlank
+    private String email;
 
     @NotBlank
     private String description;
@@ -102,6 +104,14 @@ public class Task implements Serializable {
 
 	public void setCompleted(boolean completed) {
 		this.completed = completed;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	

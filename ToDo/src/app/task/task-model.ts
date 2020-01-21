@@ -1,5 +1,6 @@
 export interface task{
     _id: string;
+    email: string;
     taskname: string;
     completed: boolean;
     description: string;

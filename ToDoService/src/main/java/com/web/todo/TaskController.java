@@ -1,5 +1,6 @@
 package com.web.todo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -20,7 +21,7 @@ import com.web.todo.repository.ResourceNotFoundException;
 import com.web.todo.repository.ToDoRepository;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("*")
 public class TaskController {
 @Autowired
 ToDoRepository toDoRepository;
@@ -33,11 +34,13 @@ public Task createTask(@Valid @RequestBody Task task) {
     return toDoRepository.save(task);
 }
 //Get a Single Note
-@GetMapping("/tasks/{id}")
-public Task getNoteById(@PathVariable(value = "id") Long taskId) {
- return toDoRepository.findById(taskId)
-         .orElseThrow(() -> new ResourceNotFoundException("Task", "id", taskId));
+@GetMapping("/tasks/{emailid}")
+public ArrayList<Task> getNoteById(@PathVariable(value = "emailid") String emailId) {
+	//ArrayList<String>emails=toDoRepository.findtaskswithexpireddate();
+ return toDoRepository.findtaskswithemail(emailId);
+        
 }
+
 @PutMapping("/tasks/{id}")
 public Task updateNote(@PathVariable(value = "id") Long noteId,
                                         @Valid @RequestBody Task taskDetails) {

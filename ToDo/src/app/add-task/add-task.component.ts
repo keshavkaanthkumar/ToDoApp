@@ -6,6 +6,7 @@ import {MatDialogRef,MatFormFieldModule} from '@angular/material';
 import {Form} from '@angular/forms'
 import {TodoService} from '../task/todo.service';
 import {task} from '../task/task-model';
+import{AuthenticationService} from '../authentication.service'
 import {ModalService} from '../_modal/modal.service'
 
 
@@ -17,6 +18,7 @@ import {ModalService} from '../_modal/modal.service'
 export class AddTaskComponent implements OnInit {
   task: task = {
     _id: null,
+    email: null,
     taskname: null,
     description: null,
     completed: false,
@@ -24,8 +26,9 @@ export class AddTaskComponent implements OnInit {
     modified_date: null,
     due_date: null
   };
-  constructor(private todo: TodoService, private modalService: ModalService) { }
+  constructor(private todo: TodoService, private modalService: ModalService,public auth: AuthenticationService) { }
   onAdd() {
+    this.task.email=this.auth.getUserDetails().sub;
     this.todo.Add(this.task).subscribe(() => {
       
     }, (err) => {

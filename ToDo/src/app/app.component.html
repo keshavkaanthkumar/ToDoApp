@@ -1,1 +1,31 @@
-<app-home></app-home>
+<!-- <mat-menu>
+    <li><a routerLink="/">Home</a></li>
+    <ul>
+        <li *ngIf="!auth.isLoggedIn()" mat-menu-item><a routerLink="/login">Sign in</a></li>
+        <li *ngIf="auth.isLoggedIn()" mat-menu-item><a routerLink="/profile">{{ auth.getUserDetails()?.name }}</a></li>
+        <li *ngIf="auth.isLoggedIn()" mat-menu-item><a (click)="auth.logout()">Logout</a></li>
+    </ul>
+</mat-menu>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+</mat-menu> -->
+<mat-toolbar color="primary">
+    <div fxHide.gt-xs>
+        <mat-icon>ToDo</mat-icon>
+
+    </div>
+    <div class="home">
+        <a routerLink="/">Home</a>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="15px">
+
+            <button class="sign-in-btn" mat-raised-button color="accent" *ngIf="!auth.isLoggedIn()"><a routerLink="/login">Sign in</a></button>
+            <span class="user" *ngIf="auth.isLoggedIn()">Hello {{ auth.getUserDetails()?.sub }} !</span>
+            <button class="logout-btn" mat-raised-button color="warn" *ngIf="auth.isLoggedIn()"><a (click)="auth.logout()">Logout</a></button>
+
+        </ul>
+    </div>
+</mat-toolbar>
+<router-outlet></router-outlet>

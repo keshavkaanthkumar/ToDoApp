@@ -8,6 +8,10 @@ ul {
     padding: 0;
 }
 
+.sign-in-btn {
+    margin-left: 1100px;
+}
+
 
 /* Style the list items */
 
@@ -17,12 +21,19 @@ ul li {
     padding: 12px 8px 12px 40px;
     background: #eee;
     font-size: 18px;
+    list-style: none;
     transition: 0.2s;
+    list-style-type: none;
     /* make the list items unselectable */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.user {
+    margin-right: 30px;
+    margin-left: 160%;
 }
 
 
@@ -72,6 +83,16 @@ ul li.checked::before {
     right: 0;
     top: 0;
     padding: 12px 16px 12px 16px;
+}
+
+a {
+    text-decoration: none;
+    color: white
+}
+
+.home {
+    margin-left: 50px;
+    color: white;
 }
 
 .close:hover {

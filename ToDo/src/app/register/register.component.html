@@ -1,0 +1,61 @@
+<div class="container">
+
+    <!-- <div class="row">
+    <div class="col-md-6">
+      <h1>Register</h1>
+      <p class="lead">Already a member? Please <a routerLink="/login">log in</a> instead.</p>
+      <form (submit)="register()">
+        <div class="form-group">
+          <label for="name">Full name</label>
+          <input type="text" class="form-control" name="name" placeholder="Enter your name" [(ngModel)]="credentials.name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="credentials.email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="credentials.password">
+        </div>
+        <button type="submit" class="btn btn-default">Register!</button>
+      </form>
+    </div>
+  </div> -->
+    <mat-card class="card">
+        <mat-card-header>
+            <mat-card-title>Register</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form class="example-form">
+                <table class="example-full-width" cellspacing="0">
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Enter full name" [(ngModel)]="credentials.name" name="username" required>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Enter email" [(ngModel)]="credentials.email" name="email" required>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input matInput name="password" type="password" placeholder="Password" [(ngModel)]="credentials.password" required>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button (click)="register()" color="primary">Register</button>
+        </mat-card-actions>
+    </mat-card>
+
+</div>

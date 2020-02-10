@@ -11,7 +11,7 @@
 	<groupId>com.web.todo</groupId>
 	<artifactId>todo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>ToDoService</name>
 	<description>todo app</description>
 

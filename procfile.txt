@@ -1,1 +1,1 @@
-web: node index.js
+web: java -war target/todo-0.0.1-SNAPSHOT.war
